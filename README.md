@@ -25,4 +25,4 @@ The system helps students explore and manage university activities easily.
 - Contact Us
 
 ## Author
-Menna Mohamed
+Menna Shaheen
