@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Event</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="Book">
+ <section id="navbar">
+<div class="logo">
+    <img src="imgs/RST-logo-01-762x1024.png" alt="SAR logo">
+    <H1>Student Activities Repository</H1></div>
+    <nav>
+    <UL>
+        <LI><a href="index.html">HOME</a> </LI>
+        <LI> <a href="register.html">REGISTER</a> </LI>
+        <LI><a href="Book.html">BOOK EVENT</a> </LI>
+        <LI><a href="history.html">EVENT HISTORY</a> </LI>
+        <LI><a href="calendar.html">CALENDER</a> </LI>
+        <LI><a href="contact.html">CONTACT US</a> </LI>
+    </UL>
+</nav>
+</section> 
+<main>
+<div class="container_book">
+         <div class="form">
+<h2>Book an Event</h2>
+<form id="bookingForm">
+                <div class="form_group">
+                    <label for="eventName">Event Name</label><br>
+                    <input type="text" id="eventName" required><br>
+                </div>
+                <div class="form_group">
+                    <label for="eventType">Event Type</label><br>
+                    <select id="eventType" required><br>
+                        <option value="" disabled selected>Select type</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="lecture">Lecture</option>
+                        <option value="competition">Competition</option>
+                        <option value="social">Social Event</option>
+                    </select>
+                </div>
+                <div class="form_group">
+                    <label for="eventDate">Date</label><br>
+                    <input type="date" id="eventDate" required><br>
+                </div>
+                <div class="form_group">
+                    <label for="eventTime">Time</label><br>
+                    <input type="time" id="eventTime" required><br>
+                </div>
+                <div class="form_group">
+                    <label for="eventLocation">Location</label><br>
+                    <input type="text" id="eventLocation" required><br>
+                </div>
+                <div class="form_group">
+                    <label for="eventAudience">Target Audience</label><br>
+                    <input type="text" id="eventAudience" required><br>
+                </div>
+                <div class="form_group">
+                    <label for="eventResources">Required Resources</label><br>
+                    <textarea id="eventResources" rows="3"></textarea><br>
+                </div>
+                <button type="submit" class="AllButtons">Submit Booking</button>
+</form>
+</div>
+</div>
+</main>
+<footer class="footer">
+    <p>&copy; 2025 FCAI - AI-Ryada University. All rights reserved.</p>
+</footer>
+</div>
+    <script src="js/script.js"></script>
+    <script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('eventName').value;
+    const type = document.getElementById('eventType').value;
+    const date = document.getElementById('eventDate').value;
+    const time = document.getElementById('eventTime').value;
+    const location = document.getElementById('eventLocation').value;
+    const audience = document.getElementById('eventAudience').value;
+    const materials = document.getElementById('eventResources').value;
+
+    if (!name || !date || !time) return;
+
+    const events = JSON.parse(localStorage.getItem('events')) || [];
+
+    events.push({
+        name,
+        type,
+        date,
+        time,
+        location,
+        audience,
+        materials
+    });
+
+    localStorage.setItem('events', JSON.stringify(events));
+
+    alert('Event booked successfully!');
+    this.reset();
+});
+
+</script>
+
+</body>
+</html>                                        

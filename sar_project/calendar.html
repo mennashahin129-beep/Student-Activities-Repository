@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="calendar">
+    <section id="navbar">
+        <div class="logo">
+            <img src="imgs/RST-logo-01-762x1024.png" alt="SAR logo">
+            <H1>Student Activities Repository</H1></div>
+            <nav>
+            <UL>
+                <LI><a href="index.html">HOME</a> </LI>
+                <LI> <a href="register.html">REGISTER</a> </LI>
+                <LI><a href="Book.html">BOOK EVENT</a> </LI>
+                <LI><a href="history.html">EVENT HISTORY</a> </LI>
+                <LI><a href="calendar.html">CALENDER</a> </LI>
+                <LI><a href="contact.html">CONTACT US</a> </LI>
+            </UL>
+        </nav>
+        </section> 
+        <main>
+  <div class="container_calendar">
+    <div class="calendar-header">
+      <button onclick="prevMonth()" class="AllButtons">◀ previous </button>
+      <h1 id="month-title">May 2025</h1>
+      <button onclick="nextMonth()" class="AllButtons">forward ▶</button>
+    </div>
+
+    <div class="calendar-grid" id="calendar-grid">
+      <div class="day-name">Saturday</div>
+      <div class="day-name">sunday</div>
+      <div class="day-name">Monday</div>
+      <div class="day-name">Tuseday</div>
+      <div class="day-name">wednesday</div>
+      <div class="day-name">Thursday</div>
+      <div class="day-name">Friday</div>
+      
+    </div>
+
+    <div class="add-event">
+      <button onclick="addEvent()" class="AllButtons" > <a href="Book.html">NewEvent</a></button>
+    </div>
+  </div>
+  </main>
+   <footer class="footer">
+            <p>&copy; 2025 FCAI - AI-Ryada University. All rights reserved.</p>
+        </footer>
+        </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
